@@ -76,9 +76,9 @@ csvFiles = [f'{saveDir}\{csvFile}' for csvFile in os.listdir(saveDir)]
 dateCols = ['Report_Month', 'Event_Date', 'Cancel_Date']
 gcpSchema = [{'name':col,'type':'date'} for col in dateCols]
 projectId='skyuk-uk-csgbillanalysis-dev'
-destTable=f'Sandpit.GB_Netflix_{fileMonth}_test'
+destTable=f'Sandpit.GB_Netflix_Invoice_{fileMonth}'
 
-for csvFile in csvFiles:
+for item, csvFile in enumerate(csvFiles):
     print(f'Loading data from {csvFile}...', end='\r')
     df = pd.read_csv(csvFile)
     df = df.rename(columns={col:col.replace(' ','_') for col in df.columns})
@@ -86,6 +86,8 @@ for csvFile in csvFiles:
         df[col] = df[col].astype('datetime64[ns]')
     df['Account_Number'] = df.Billing_Partner_Handle.apply(lambda x:x[-12:] if x[:3]=='SKY' else None)
     print(f'Uploading data from {csvFile} to {destTable}...', end='\r')
-    df.to_gbq(project_id=projectId, destination_table=destTable, if_exists='append', location='EU', table_schema=gcpSchema)
+    df.to_gbq(project_id=projectId, destination_table=destTable, 
+                if_exists='replace' if item == 0 else 'append',
+                location='EU', table_schema=gcpSchema)
 
 print('Process Ended')
