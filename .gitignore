@@ -1,0 +1,11 @@
+.DS_Store
+.vscode/
+authentication.js
+node_modules
+notes/
+**/*-todo.md
+text_file*.py
+*.enc
+*.key
+*.log
+__pycache__/
