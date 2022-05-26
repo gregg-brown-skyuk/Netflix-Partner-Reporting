@@ -89,7 +89,7 @@ csvFiles = [f'{saveDir}\{csvFile}' for csvFile in os.listdir(saveDir)]
 dateCols = ['Report_Month', 'Event_Date', 'Cancel_Date']
 gcpSchema = [{'name':col,'type':'date'} for col in dateCols]
 projectId='skyuk-uk-csgbillanalysis-dev'
-destTable=f'Sandpit.GB_Netflix_Invoice_{fileMonth}'
+destTable=f'Netflix_billing.Python_Netflix_Invoice_{fileMonth}'
 
 # Extract, transform and upload data from csv files to GCP
 for item, csvFile in enumerate(csvFiles):
