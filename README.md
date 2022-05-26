@@ -1,17 +1,24 @@
 # Netflix Partner Reporting Dowload Tool
+![Netflix on Sky][netflix-sky-image]
 
 This code allows the automatic download of monthly reporting from Netflix Partner site followed by the upload of the contained data to Google Cloud Patform BigQuery table.
 
-* netflix_report_download.py_
+---
+### *netflix_report_download.py*
+
 This is the code which completes the processes of:
-    accessing the website to download report;
-    extracting the csv files from the downloaded zip archives;
-    loading and tranforming the data from csv file in a dataframe;
-    uploading data from the dataframe to GCP.
+- accessing the website to download report;
+- extracting the csv files from the downloaded zip archives;
+- loading and tranforming the data from csv file in a dataframe;
+- uploading data from the dataframe to GCP.
+---
+### *create_credentials.py*
 
-* create_credentials.py
 This script is used to:
-    create new credentials file when called by netflix_report_download.py script;
-    create new or amend existing credentials when run directly.
+- create new credentials file when called by `netflix_report_download.py` script;
+- create new or amend existing credentials when run directly.
 
-I've added this.
+### Contact me by [email][my-email].
+
+[netflix-sky-image]: https://static.skyassets.com/contentstack/assets/bltdc2476c7b6b194dd/bltbf7ca9ff9400dbe7/5e21f0bce2b3975498eae0b0/Sky_and_Netflix.png
+[my-email]: mailto:gregg.brown@sky.uk
