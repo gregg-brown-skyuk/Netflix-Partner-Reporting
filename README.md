@@ -13,3 +13,5 @@ This is the code which completes the processes of:
 This script is used to:
     create new credentials file when called by netflix_report_download.py script;
     create new or amend existing credentials when run directly.
+
+I've added this.
