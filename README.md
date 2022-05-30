@@ -35,9 +35,9 @@ These additional python libraires need to be installed.
 <details>
     <summary>The script requires the Firefox browser to be installed, and Firefox webdriver needs to be downloaded and installed / save to PATH folder.</summary>
 
-* Download Firefox from [here][ff-link]
+* <a href='https://www.mozilla.org/en-GB/firefox/download/thanks/' target='_blank'>Download Firefox</a>
 
-* Download Webdriver from [here][ff-driver]
+* <a href='https://github.com/mozilla/geckodriver/releases' target='_blank'>Download Webdriver</a>
 </details>
 
 ---
@@ -46,5 +46,3 @@ These additional python libraires need to be installed.
 <!-- Links  -->
 
 [my-email]: mailto:gregg.brown@sky.uk
-[ff-link]: https://www.mozilla.org/en-GB/firefox/download/thanks/
-[ff-driver]: https://github.com/mozilla/geckodriver/releases
