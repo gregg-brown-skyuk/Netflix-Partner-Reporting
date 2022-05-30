@@ -48,20 +48,3 @@ These additional python libraires need to be installed.
 [my-email]: mailto:gregg.brown@sky.uk
 [ff-link]: https://www.mozilla.org/en-GB/firefox/download/thanks/
 [ff-driver]: https://github.com/mozilla/geckodriver/releases
-
-<style>
-    .container {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-    }
-    .item {
-        text-align: center;
-        border: 1px solid #444444;
-        flex-grow: 1;
-    }
-    #sky_netflix {
-        border: 1px solid;
-        border-radius: 25px;
-    }
-</style>
