@@ -41,7 +41,8 @@ These additional python libraires need to be installed.
 </details>
 
 ---
-### Contact me by [email][my-email].
+### [Gregg Brown][my-email]
+*Committed to Github May 2022*
 
 <!-- Links  -->
 
