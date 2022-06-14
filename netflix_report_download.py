@@ -89,7 +89,6 @@ csvFiles = [f'{saveDir}\{csvFile}' for csvFile in os.listdir(saveDir)]
 dateCols = ['Report_Month', 'Event_Date', 'Cancel_Date']
 gcpSchema = [{'name':col,'type':'date'} for col in dateCols]
 projectId='skyuk-uk-csgbillanalysis-dev'
-destTable=f'Netflix_billing.Python_Netflix_Invoice_{fileMonth}'
 
 # Extract, transform and upload data from csv files to GCP
 for item, csvFile in enumerate(csvFiles):
@@ -99,9 +98,11 @@ for item, csvFile in enumerate(csvFiles):
     for col in ['Report_Month', 'Event_Date', 'Cancel_Date']:
         df[col] = df[col].astype('datetime64[ns]')
     df['Account_Number'] = df.Billing_Partner_Handle.apply(lambda x:x[-12:] if x[:3]=='SKY' else None)
+    destTable=f'Netflix_billing.{"UK" if item == 0 else "IE"}_Python_Netflix_Invoice_{fileMonth}'
     print(f'Uploading data from {csvFile} to {destTable}...', end='\r')
-    df.to_gbq(project_id=projectId, destination_table=destTable, 
-                if_exists='replace' if item == 0 else 'append',
+    df.to_gbq(project_id=projectId,
+                destination_table=destTable,
+                if_exists='append',
                 location='EU', table_schema=gcpSchema)
 
 print('Process Ended')
